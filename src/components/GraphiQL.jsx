@@ -6,7 +6,7 @@ import 'graphiql/graphiql.css';
 
 import { createRoot } from 'react-dom/client';
 const fetcher = createGraphiQLFetcher({
-    url: 'https://localhost:9080/graphql',
+    url: 'http://localhost:8080/graphql',
 });
 
 function MyGraphQLIDE() {
