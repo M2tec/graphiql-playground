@@ -1,13 +1,22 @@
-import { useState } from 'react'
 import './App.css'
-import MyGraphQLIDE from './components/GraphiQL'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import Home from "./pages/Home";
+import Admin from "./pages/Admin";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route index element={<Home />} />
+      <Route path="admin" element={<Admin />} />
+    </Route>
+  )
+)
 
 function App() {
 
+
   return (
-    <>
-      <MyGraphQLIDE/>
-    </>
+    <RouterProvider router={router} />
   )
 }
 

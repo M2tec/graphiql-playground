@@ -4,14 +4,23 @@ import { GraphiQL } from 'graphiql';
 import React from 'react';
 import 'graphiql/graphiql.css';
 
-import { createRoot } from 'react-dom/client';
-const fetcher = createGraphiQLFetcher({
-    url: 'http://localhost:8080/graphql',
-});
+function MyGraphQLIDE({admin}) {
 
-function MyGraphQLIDE() {
+  let GQLurl = ""
+
+  if (admin) {
+    GQLurl = 'http://localhost:8080/admin'
+  } else {
+    GQLurl = 'http://localhost:8080/graphql'
+  }
+
+  let url = { }
+  url["url"] = GQLurl
+  console.log(url)
+  const fetcher = createGraphiQLFetcher(url);
+
   return (
-  <GraphiQL fetcher={fetcher} />
+    <GraphiQL fetcher={fetcher} />
   );
 }
 
