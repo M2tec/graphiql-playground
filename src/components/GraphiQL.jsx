@@ -9,9 +9,10 @@ function MyGraphQLIDE({admin}) {
   let GQLurl = ""
 
   if (admin) {
-    GQLurl = 'http://localhost:8080/admin'
+    GQLurl = 'http://localhost:28080/admin'
   } else {
-    GQLurl = 'http://localhost:8080/graphql'
+    //GQLurl = 'https://dgraph.m2tec.nl/graphql'
+    GQLurl = 'http://localhost:28080/graphql'
   }
 
   let url = { }
