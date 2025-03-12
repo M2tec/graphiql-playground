@@ -21,6 +21,7 @@ function MyGraphQLIDE({admin}) {
   const fetcher = createGraphiQLFetcher(url);
 
   return (
+    
     <GraphiQL fetcher={fetcher} />
   );
 }
