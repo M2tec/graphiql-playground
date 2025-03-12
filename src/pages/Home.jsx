@@ -5,10 +5,8 @@ import 'graphiql/graphiql.css';
 
 const Home = () => {
   const [location, setLocation] = useState("http://localhost:28080/graphql")
-  const [inputValue, setinputValue] = useState("http://localhost:28080/graphql")
-
-
-   let fetcher = createGraphiQLFetcher({url:location});
+  
+  let fetcher = createGraphiQLFetcher({url:location});
   
 
   useEffect(() => {
@@ -20,12 +18,12 @@ const Home = () => {
   function handleLocationChange (e) {
     let newLocation = e.target.innerText
     // setLocation(newLocation)
-    setinputValue(newLocation)
+    setLocation(newLocation)
   }
 
   function handleChange(e){
     console.log(e.target.value)
-    setinputValue(e.target.value)
+    setLocation(e.target.value)
   }
 
   return (
@@ -51,7 +49,7 @@ const Home = () => {
         </ul>
       </div>
 
-      <input type="text" className="form-control w-75" onChange={handleChange} value={inputValue} placeholder="http://" aria-label="Username" aria-describedby="basic-addon1" />
+      <input type="text" className="form-control w-75" onChange={handleChange} value={location} placeholder="http://" aria-label="Username" aria-describedby="basic-addon1" />
 
       </div>
 
