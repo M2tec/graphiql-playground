@@ -7,7 +7,14 @@ const Home = () => {
   const [location, setLocation] = useState("http://localhost:28080/graphql")
   
   let fetcher = createGraphiQLFetcher({url:location});
-  
+
+  useEffect(() => {
+    
+    let graphqlUrlList = (import.meta.env.VITE_GRAPH_URL).split(",")
+    console.log("gList: ", graphqlUrlList)
+    setLocation(graphqlUrlList[0])
+  },
+  [location])
 
   useEffect(() => {
     fetcher = createGraphiQLFetcher({url:location});
